@@ -16,9 +16,9 @@ var BackgroundSelectorView = Backbone.View.extend({
     events: {},
 
     render: function () {
-      // Set modelID based on view, if a menu then hard code the id as .menu
+      // Set modelID based on view, if a menu then add ''.menu-' to the _id
       if(this.model.get('_type') == "menu") {
-        this.modelID = '.menu';
+        this.modelID = '.menu-'+this.model.get('_id');
       } else {
         this.modelID = '.'+this.model.get('_id');
       }
