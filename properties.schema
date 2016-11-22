@@ -15,7 +15,111 @@
           "type":"object"
         },
         "contentobject": {
-          "type":"object"
+          "type":"object",
+          "properties":{
+            "_backgroundSelector": {
+              "type":"object",
+              "required":false,
+              "legend": "Background Selector",
+              "properties":{
+                "_isEnabled": {
+                  "type":"boolean",
+                  "required":true,
+                  "default": false,
+                  "title": "Enabled",
+                  "inputType": { "type": "Boolean", "options": [false, true]},
+                  "validators": [],
+                  "help": "Turns Background Selector on and off. Acceptable values are true and false."
+                },
+                "_hideOnMobile": {
+                  "type":"boolean",
+                  "required":true,
+                  "default": false,
+                  "title": "Enabled",
+                  "inputType": { "type": "Boolean", "options": [false, true]},
+                  "validators": [],
+                  "help": "Hides the background image on small devices."
+                },
+                "_src": {
+                  "type": "string",
+                  "required": true,
+                  "default": "",
+                  "title": "Background Graphic",
+                  "inputType": "Asset:image",
+                  "validators": [],
+                  "help": "Select a graphic to be used for the article background."
+                },
+                "_position": {
+                  "type":"string",
+                  "required": true,
+                  "default": "top",
+                  "title": "CSS Position Property",
+                  "inputType": {"type": "Select", "options": ["top", "bottom", "center", "left top", "left center", "left bottom", "right top", "right center", "right bottom", "center top", "center center", "center bottom"]},
+                  "validators": [],
+                  "help": "Set the position of the graphic with the pre-defined CSS styles."
+                },
+                "_size": {
+                  "type":"string",
+                  "required": true,
+                  "default": "auto",
+                  "title": "CSS Size Property",
+                  "inputType": {"type": "Select", "options": ["auto", "cover"]},
+                  "validators": [],
+                  "help": "Set the size of the graphic with the pre-defined CSS styles."
+                },
+                "_repeat": {
+                  "type":"string",
+                  "required": true,
+                  "default": "no-repeat",
+                  "title": "CSS Repeat Property",
+                  "inputType": {"type": "Select", "options": ["no-repeat", "repeat"]},
+                  "validators": [],
+                  "help": "Set the repeat property of the graphic with the pre-defined CSS styles."
+                },
+                "_attachment": {
+                  "type":"string",
+                  "required": true,
+                  "default": "scroll",
+                  "title": "CSS Attachement Property",
+                  "inputType": {"type": "Select", "options": ["scroll", "fixed"]},
+                  "validators": [],
+                  "help": "Set the attachment property of the graphic with the pre-defined CSS styles."
+                },
+                "_color": {
+                  "type": "string",
+                  "required": false,
+                  "default": "#fff",
+                  "title": "Background Colour",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Set the background colour of the article using a hex code format, e.g. #fff for the colour white."
+                },
+                "_mobile": {
+                  "type":"object",
+                  "required": false,
+                  "properties":{
+                    "_isEnabled": {
+                      "type":"boolean",
+                      "required": false,
+                      "default": "false",
+                      "title": "Mobile Background Enabled",
+                      "inputType": { "type": "Boolean", "options": [false, true]},
+                      "validators": []
+                    },
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Mobile Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the article background on a small device."
+                    }
+                  }
+                }
+              }
+            }
+          }
         },
         "article": {
           "type":"object",

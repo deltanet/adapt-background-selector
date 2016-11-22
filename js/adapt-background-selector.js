@@ -16,8 +16,13 @@ var BackgroundSelectorView = Backbone.View.extend({
     events: {},
 
     render: function () {
+      // Set modelID based on view, if a menu then hard code the id as .menu
+      if(this.model.get('_type') == "menu") {
+        this.modelID = '.menu';
+      } else {
+        this.modelID = '.'+this.model.get('_id');
+      }
 
-      this.modelID = '.'+this.model.get('_id');
       this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
       this.position = this.model.get('_backgroundSelector')._position;
       this.size = this.model.get('_backgroundSelector')._size;
@@ -56,7 +61,7 @@ var BackgroundSelectorView = Backbone.View.extend({
 
 });
 
-Adapt.on('articleView:postRender blockView:postRender componentView:postRender', function(view) {
+Adapt.on('menuView:postRender articleView:postRender blockView:postRender componentView:postRender', function(view) {
     if (view.model.get("_backgroundSelector")) {
         new BackgroundSelectorView({
             model:view.model
