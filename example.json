@@ -2,15 +2,21 @@
 
 "_backgroundSelector": {
   "_isEnabled": true,
-  "_hideOnMobile": false,
-  "_src": "course/en/images/***.jpg",
+  "_large": {
+    "_isEnabled": true,
+    "_src": "course/en/images/***.jpg"
+  },
+  "_medium": {
+    "_isEnabled": true,
+    "_src": "course/en/images/***.jpg"
+  },
+  "_small": {
+    "_isEnabled": true,
+    "_src": "course/en/images/***.jpg"
+  },
   "_position": "top",
   "_size": "auto",
   "_repeat": "repeat",
   "_attachment": "scroll",
-  "_color": "#000",
-  "_mobile": {
-    "_isEnabled": true,
-    "_src": "course/en/images/***.jpg"
-  }
+  "_color": "#000"
 }

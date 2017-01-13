@@ -6,11 +6,9 @@ var Backbone = require('backbone');
 var BackgroundSelectorView = Backbone.View.extend({
 
     initialize: function () {
-      if (this.model.get('_backgroundSelector') && this.model.get('_backgroundSelector')._isEnabled) {
-        this.render();
-        this.listenTo(Adapt, "remove", this.remove);
-        this.listenTo(Adapt, 'device:changed', this.setBackgroundImage);
-      }
+      this.render();
+      this.listenTo(Adapt, "remove", this.remove);
+      this.listenTo(Adapt, 'device:changed', this.setBackgroundImage);
     },
 
     events: {},
@@ -23,7 +21,6 @@ var BackgroundSelectorView = Backbone.View.extend({
         this.modelID = '.'+this.model.get('_id');
       }
 
-      this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
       this.position = this.model.get('_backgroundSelector')._position;
       this.size = this.model.get('_backgroundSelector')._size;
       this.repeat = this.model.get('_backgroundSelector')._repeat;
@@ -36,16 +33,15 @@ var BackgroundSelectorView = Backbone.View.extend({
     },
 
     setBackgroundImage: function () {
+      // Reset
+      this.image = "none";
       // Check device size
-      if (Adapt.device.screenSize === 'large' || Adapt.device.screenSize === 'medium') {
-        this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
-      } else {
-        if(this.model.get('_backgroundSelector')._mobile._isEnabled){
-          this.image = 'url('+this.model.get('_backgroundSelector')._mobile._src+')';
-        }
-        if(this.model.get('_backgroundSelector')._hideOnMobile){
-          this.image = 'none';
-        }
+      if (Adapt.device.screenSize === 'large' && this.model.get('_backgroundSelector')._large._isEnabled) {
+          this.image = 'url('+this.model.get('_backgroundSelector')._large._src+')';
+      } else if (Adapt.device.screenSize === 'medium' && this.model.get('_backgroundSelector')._medium._isEnabled) {
+          this.image = 'url('+this.model.get('_backgroundSelector')._medium._src+')';
+      } else if (Adapt.device.screenSize === 'small' && this.model.get('_backgroundSelector')._small._isEnabled) {
+          this.image = 'url('+this.model.get('_backgroundSelector')._small._src+')';
       }
 
       $(this.modelID).css({
@@ -62,7 +58,7 @@ var BackgroundSelectorView = Backbone.View.extend({
 });
 
 Adapt.on('menuView:postRender articleView:postRender blockView:postRender componentView:postRender', function(view) {
-    if (view.model.get("_backgroundSelector")) {
+    if (view.model.get("_backgroundSelector") && view.model.get('_backgroundSelector')._isEnabled) {
         new BackgroundSelectorView({
             model:view.model
         });
