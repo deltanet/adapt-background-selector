@@ -31,23 +31,53 @@
                   "validators": [],
                   "help": "Turns Background Selector on and off. Acceptable values are true and false."
                 },
-                "_hideOnMobile": {
-                  "type":"boolean",
-                  "required":true,
-                  "default": false,
-                  "title": "Enabled",
-                  "inputType": { "type": "Boolean", "options": [false, true]},
-                  "validators": [],
-                  "help": "Hides the background image on small devices."
+                "_large": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Desktop",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Desktop Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the menu background on a large device."
+                    }
+                  }
                 },
-                "_src": {
-                  "type": "string",
-                  "required": true,
-                  "default": "",
-                  "title": "Background Graphic",
-                  "inputType": "Asset:image",
-                  "validators": [],
-                  "help": "Select a graphic to be used for the article background."
+                "_medium": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Tablet",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Tablet Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the menu background on a medium device."
+                    }
+                  }
+                },
+                "_small": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Mobile",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Mobile Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the menu background on a small device."
+                    }
+                  }
                 },
                 "_position": {
                   "type":"string",
@@ -93,29 +123,6 @@
                   "inputType": "Text",
                   "validators": [],
                   "help": "Set the background colour of the article using a hex code format, e.g. #fff for the colour white."
-                },
-                "_mobile": {
-                  "type":"object",
-                  "required": false,
-                  "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Mobile Background Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
-                    "_src": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "title": "Mobile Background Graphic",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "help": "Select a graphic to be used for the article background on a small device."
-                    }
-                  }
                 }
               }
             }
@@ -138,23 +145,53 @@
                   "validators": [],
                   "help": "Turns Background Selector on and off. Acceptable values are true and false."
                 },
-                "_hideOnMobile": {
-                  "type":"boolean",
-                  "required":true,
-                  "default": false,
-                  "title": "Enabled",
-                  "inputType": { "type": "Boolean", "options": [false, true]},
-                  "validators": [],
-                  "help": "Hides the background image on small devices."
+                "_large": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Desktop",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Desktop Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the article background on a large device."
+                    }
+                  }
                 },
-                "_src": {
-                  "type": "string",
-                  "required": true,
-                  "default": "",
-                  "title": "Background Graphic",
-                  "inputType": "Asset:image",
-                  "validators": [],
-                  "help": "Select a graphic to be used for the article background."
+                "_medium": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Tablet",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Tablet Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the article background on a medium device."
+                    }
+                  }
+                },
+                "_small": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Mobile",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Mobile Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the article background on a small device."
+                    }
+                  }
                 },
                 "_position": {
                   "type":"string",
@@ -200,29 +237,6 @@
                   "inputType": "Text",
                   "validators": [],
                   "help": "Set the background colour of the article using a hex code format, e.g. #fff for the colour white."
-                },
-                "_mobile": {
-                  "type":"object",
-                  "required": false,
-                  "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Mobile Background Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
-                    "_src": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "title": "Mobile Background Graphic",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "help": "Select a graphic to be used for the article background on a small device."
-                    }
-                  }
                 }
               }
             }
@@ -245,23 +259,53 @@
                   "validators": [],
                   "help": "Turns Background Selector on and off. Acceptable values are true and false."
                 },
-                "_hideOnMobile": {
-                  "type":"boolean",
-                  "required":true,
-                  "default": false,
-                  "title": "Enabled",
-                  "inputType": { "type": "Boolean", "options": [false, true]},
-                  "validators": [],
-                  "help": "Hides the background image on small devices."
+                "_large": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Desktop",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Desktop Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the block background on a large device."
+                    }
+                  }
                 },
-                "_src": {
-                  "type": "string",
-                  "required": true,
-                  "default": "",
-                  "title": "Background Graphic",
-                  "inputType": "Asset:image",
-                  "validators": [],
-                  "help": "Select a graphic to be used for the block background."
+                "_medium": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Tablet",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Tablet Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the block background on a medium device."
+                    }
+                  }
+                },
+                "_small": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Mobile",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Mobile Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the block background on a small device."
+                    }
+                  }
                 },
                 "_position": {
                   "type":"string",
@@ -307,29 +351,6 @@
                   "inputType": "Text",
                   "validators": [],
                   "help": "Set the background colour of the block using a hex code format, e.g. #fff for the colour white."
-                },
-                "_mobile": {
-                  "type":"object",
-                  "required": false,
-                  "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Mobile Background Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
-                    "_src": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "title": "Mobile Background Graphic",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "help": "Select a graphic to be used for the block background on a small device."
-                    }
-                  }
                 }
               }
             }
@@ -352,23 +373,53 @@
                   "validators": [],
                   "help": "Turns Background Selector on and off. Acceptable values are true and false."
                 },
-                "_hideOnMobile": {
-                  "type":"boolean",
-                  "required":true,
-                  "default": false,
-                  "title": "Enabled",
-                  "inputType": { "type": "Boolean", "options": [false, true]},
-                  "validators": [],
-                  "help": "Hides the background image on small devices."
+                "_large": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Desktop",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Desktop Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the component background on a large device."
+                    }
+                  }
                 },
-                "_src": {
-                  "type": "string",
-                  "required": true,
-                  "default": "",
-                  "title": "Background Graphic",
-                  "inputType": "Asset:image",
-                  "validators": [],
-                  "help": "Select a graphic to be used for the component background."
+                "_medium": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Tablet",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Tablet Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the component background on a medium device."
+                    }
+                  }
+                },
+                "_small": {
+                  "type":"object",
+                  "required": false,
+                  "title": "Mobile",
+                  "properties":{
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Mobile Background Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "Select a graphic to be used for the component background on a small device."
+                    }
+                  }
                 },
                 "_position": {
                   "type":"string",
@@ -414,29 +465,6 @@
                   "inputType": "Text",
                   "validators": [],
                   "help": "Set the background colour of the component using a hex code format, e.g. #fff for the colour white."
-                },
-                "_mobile": {
-                  "type":"object",
-                  "required": false,
-                  "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Mobile Background Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
-                    "_src": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "title": "Mobile Background Graphic",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "help": "Select a graphic to be used for the component background on a small device."
-                    }
-                  }
                 }
               }
             }
