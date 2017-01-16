@@ -1,17 +1,14 @@
-// Add to Article, Block or component JSON
+// Add to Menu page, Article, Block or component JSON
 
 "_backgroundSelector": {
   "_isEnabled": true,
   "_large": {
-    "_isEnabled": true,
     "_src": "course/en/images/***.jpg"
   },
   "_medium": {
-    "_isEnabled": true,
     "_src": "course/en/images/***.jpg"
   },
   "_small": {
-    "_isEnabled": true,
     "_src": "course/en/images/***.jpg"
   },
   "_position": "top",

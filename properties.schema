@@ -36,14 +36,6 @@
                   "required": false,
                   "title": "Desktop",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -60,14 +52,6 @@
                   "required": false,
                   "title": "Tablet",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -84,14 +68,6 @@
                   "required": false,
                   "title": "Mobile",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -174,14 +150,6 @@
                   "required": false,
                   "title": "Desktop",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -198,14 +166,6 @@
                   "required": false,
                   "title": "Tablet",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -222,14 +182,6 @@
                   "required": false,
                   "title": "Mobile",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -312,14 +264,6 @@
                   "required": false,
                   "title": "Desktop",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -336,14 +280,6 @@
                   "required": false,
                   "title": "Tablet",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -360,14 +296,6 @@
                   "required": false,
                   "title": "Mobile",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -450,14 +378,6 @@
                   "required": false,
                   "title": "Desktop",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -474,14 +394,6 @@
                   "required": false,
                   "title": "Tablet",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,
@@ -498,14 +410,6 @@
                   "required": false,
                   "title": "Mobile",
                   "properties":{
-                    "_isEnabled": {
-                      "type":"boolean",
-                      "required": false,
-                      "default": "false",
-                      "title": "Is Enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
-                      "validators": []
-                    },
                     "_src": {
                       "type": "string",
                       "required": false,

@@ -36,11 +36,11 @@ var BackgroundSelectorView = Backbone.View.extend({
       // Reset
       this.image = "none";
       // Check device size
-      if (Adapt.device.screenSize === 'large' && this.model.get('_backgroundSelector')._large._isEnabled) {
+      if (Adapt.device.screenSize === 'large' && this.model.get('_backgroundSelector')._large._src) {
           this.image = 'url('+this.model.get('_backgroundSelector')._large._src+')';
-      } else if (Adapt.device.screenSize === 'medium' && this.model.get('_backgroundSelector')._medium._isEnabled) {
+      } else if (Adapt.device.screenSize === 'medium' && this.model.get('_backgroundSelector')._medium._src) {
           this.image = 'url('+this.model.get('_backgroundSelector')._medium._src+')';
-      } else if (Adapt.device.screenSize === 'small' && this.model.get('_backgroundSelector')._small._isEnabled) {
+      } else if (Adapt.device.screenSize === 'small' && this.model.get('_backgroundSelector')._small._src) {
           this.image = 'url('+this.model.get('_backgroundSelector')._small._src+')';
       }
 
