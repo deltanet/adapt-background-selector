@@ -15,7 +15,7 @@ If **Background selector** has been uninstalled from the Adapt authoring tool, i
 
 **Background selector** is configured on three levels: article (*articles.json*), block (*blocks.json*) and component (*components.json*).
 
-The attributes listed below are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-icon-popup/blob/master/example.json).  
+The attributes listed below are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-background-selector/blob/master/example.json).  
 
 ### Attributes
 
