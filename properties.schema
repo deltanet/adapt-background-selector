@@ -49,6 +49,16 @@
                   "validators": [],
                   "help": "Select a graphic to be used for the article background."
                 },
+                "alt": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Alt text",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Alternative text for the background graphic.",
+                  "translatable": true
+                },
                 "_position": {
                   "type":"string",
                   "required": true,
@@ -114,6 +124,16 @@
                       "inputType": "Asset:image",
                       "validators": [],
                       "help": "Select a graphic to be used for the article background on a small device."
+                    },
+                    "alt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the mobile background graphic.",
+                      "translatable": true
                     }
                   }
                 }
@@ -156,6 +176,16 @@
                   "validators": [],
                   "help": "Select a graphic to be used for the article background."
                 },
+                "alt": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Alt text",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Alternative text for the background graphic.",
+                  "translatable": true
+                },
                 "_position": {
                   "type":"string",
                   "required": true,
@@ -221,6 +251,16 @@
                       "inputType": "Asset:image",
                       "validators": [],
                       "help": "Select a graphic to be used for the article background on a small device."
+                    },
+                    "alt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the mobile background graphic.",
+                      "translatable": true
                     }
                   }
                 }
@@ -262,6 +302,16 @@
                   "inputType": "Asset:image",
                   "validators": [],
                   "help": "Select a graphic to be used for the block background."
+                },
+                "alt": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Alt text",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Alternative text for the background graphic.",
+                  "translatable": true
                 },
                 "_position": {
                   "type":"string",
@@ -328,6 +378,16 @@
                       "inputType": "Asset:image",
                       "validators": [],
                       "help": "Select a graphic to be used for the block background on a small device."
+                    },
+                    "alt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the mobile background graphic.",
+                      "translatable": true
                     }
                   }
                 }
@@ -369,6 +429,16 @@
                   "inputType": "Asset:image",
                   "validators": [],
                   "help": "Select a graphic to be used for the component background."
+                },
+                "alt": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Alt text",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Alternative text for the background graphic.",
+                  "translatable": true
                 },
                 "_position": {
                   "type":"string",
@@ -435,6 +505,16 @@
                       "inputType": "Asset:image",
                       "validators": [],
                       "help": "Select a graphic to be used for the component background on a small device."
+                    },
+                    "alt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the mobile background graphic.",
+                      "translatable": true
                     }
                   }
                 }

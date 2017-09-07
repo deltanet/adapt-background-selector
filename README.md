@@ -26,6 +26,8 @@ The Background selector attribute group contains values for **_isEnabled**, **_h
 
 >**_src** (string): File name (including path) of the image. Path should be relative to the *src* folder.  
 
+>**alt** (string): This text becomes the image’s `alt` attribute.  
+
 >**_position** (string): Defines the CSS background position class.
 
 >**_size** (string): Defines the CSS background size class.
@@ -40,14 +42,16 @@ The Background selector attribute group contains values for **_isEnabled**, **_h
 
 >>**_isEnabled** (boolean): If set to `true`, an different image will be used at mobile size.
 
->>**_src** (string): File name (including path) of the mobile image. Path should be relative to the *src* folder.
+>>**_src** (string): File name (including path) of the mobile image. Path should be relative to the *src* folder.  
+
+>>**alt** (string): This text becomes the image’s `alt` attribute.  
 
 ## Limitations
 
 No known limitations.
 
 ----------------------------
-**Version number:**  2.0.5    
+**Version number:**  2.0.6    
 **Framework versions supported:**  2.0.4    
 **Author / maintainer:** DeltaNet with [contributors](https://github.com/deltanet/adapt-background-selector/graphs/contributors)     
 **Accessibility support:** Yes  

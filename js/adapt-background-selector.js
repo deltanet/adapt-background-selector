@@ -22,6 +22,8 @@ var BackgroundSelectorView = Backbone.View.extend({
       }
 
       this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
+      this.altEnabled = false;
+      this.altText = "";
       this.position = this.model.get('_backgroundSelector')._position;
       this.size = this.model.get('_backgroundSelector')._size;
       this.repeat = this.model.get('_backgroundSelector')._repeat;
@@ -37,12 +39,21 @@ var BackgroundSelectorView = Backbone.View.extend({
       // Check device size
       if (Adapt.device.screenSize === 'large' || Adapt.device.screenSize === 'medium') {
         this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
+        if(this.model.get('_backgroundSelector').alt && !this.model.get('_backgroundSelector').alt == "") {
+          this.altEnabled = true;
+          this.altText = this.model.get('_backgroundSelector').alt;
+        }
       } else {
         if(this.model.get('_backgroundSelector')._mobile._isEnabled){
           this.image = 'url('+this.model.get('_backgroundSelector')._mobile._src+')';
+          if(this.model.get('_backgroundSelector')._mobile.alt && !this.model.get('_backgroundSelector')._mobile.alt == "") {
+            this.altEnabled = true;
+            this.altText = this.model.get('_backgroundSelector')._mobile.alt;
+          }
         }
         if(this.model.get('_backgroundSelector')._hideOnMobile){
           this.image = 'none';
+          this.altEnabled = false;
         }
       }
 
@@ -54,6 +65,13 @@ var BackgroundSelectorView = Backbone.View.extend({
           "background-attachment": this.attachment,
           "background-color": this.color
       });
+
+      // Check for image alt tag
+      if(this.altEnabled) {
+        $(this.modelID).attr({
+            "aria-label": this.altText
+        });
+      }
 
     }
 
