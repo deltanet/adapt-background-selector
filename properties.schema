@@ -136,6 +136,44 @@
                       "translatable": true
                     }
                   }
+                },
+                "_video": {
+                  "type": "object",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Video Background Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_loopEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Loop Video",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_disableOnMobile": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Disable on Mobile",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Video Asset",
+                      "inputType": "Asset:image",
+                      "validators": []
+                    }
+                  }
                 }
               }
             }
@@ -261,6 +299,44 @@
                       "validators": [],
                       "help": "Alternative text for the mobile background graphic.",
                       "translatable": true
+                    }
+                  }
+                },
+                "_video": {
+                  "type": "object",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Video Background Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_loopEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Loop Video",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_disableOnMobile": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Disable on Mobile",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Video Asset",
+                      "inputType": "Asset:image",
+                      "validators": []
                     }
                   }
                 }
@@ -390,6 +466,44 @@
                       "translatable": true
                     }
                   }
+                },
+                "_video": {
+                  "type": "object",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Video Background Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_loopEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Loop Video",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_disableOnMobile": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Disable on Mobile",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Video Asset",
+                      "inputType": "Asset:image",
+                      "validators": []
+                    }
+                  }
                 }
               }
             }
@@ -515,6 +629,44 @@
                       "validators": [],
                       "help": "Alternative text for the mobile background graphic.",
                       "translatable": true
+                    }
+                  }
+                },
+                "_video": {
+                  "type": "object",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Video Background Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_loopEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Loop Video",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_disableOnMobile": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Disable on Mobile",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Video Asset",
+                      "inputType": "Asset:image",
+                      "validators": []
                     }
                   }
                 }
