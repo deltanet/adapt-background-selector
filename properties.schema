@@ -170,7 +170,7 @@
                       "required": false,
                       "default": "",
                       "title": "Video Asset",
-                      "inputType": "Asset:image",
+                      "inputType": "Asset:video",
                       "validators": []
                     }
                   }
@@ -335,7 +335,7 @@
                       "required": false,
                       "default": "",
                       "title": "Video Asset",
-                      "inputType": "Asset:image",
+                      "inputType": "Asset:video",
                       "validators": []
                     }
                   }
@@ -500,7 +500,7 @@
                       "required": false,
                       "default": "",
                       "title": "Video Asset",
-                      "inputType": "Asset:image",
+                      "inputType": "Asset:video",
                       "validators": []
                     }
                   }
@@ -665,7 +665,7 @@
                       "required": false,
                       "default": "",
                       "title": "Video Asset",
-                      "inputType": "Asset:image",
+                      "inputType": "Asset:video",
                       "validators": []
                     }
                   }
