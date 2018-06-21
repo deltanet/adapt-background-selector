@@ -1,88 +1,42 @@
-define(function(require) {
+define([
+  'coreJS/adapt',
+  './background-selector-imageView',
+  './background-selector-videoView'
+], function(Adapt, BackgroundSelectorImageView, BackgroundSelectorVideoView) {
 
-var Adapt = require('coreJS/adapt');
-var Backbone = require('backbone');
+  var BackgroundSelector = _.extend({
 
-var BackgroundSelectorView = Backbone.View.extend({
-
-    initialize: function () {
-      this.render();
-      this.listenTo(Adapt, "remove", this.remove);
-      this.listenTo(Adapt, 'device:changed', this.setBackgroundImage);
+    initialize: function() {
+      this.listenToOnce(Adapt, "app:dataReady", this.onDataReady);
     },
 
-    events: {},
-
-    render: function () {
-      // Set modelID based on view, if a menu then add '.menu-' to the _id
-      if(this.model.get('_type') == "menu") {
-        this.modelID = '.menu-'+this.model.get('_id');
-      } else {
-        this.modelID = '.'+this.model.get('_id');
-      }
-
-      this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
-      this.altEnabled = false;
-      this.altText = "";
-      this.position = this.model.get('_backgroundSelector')._position;
-      this.size = this.model.get('_backgroundSelector')._size;
-      this.repeat = this.model.get('_backgroundSelector')._repeat;
-      this.attachment = this.model.get('_backgroundSelector')._attachment;
-      this.color = this.model.get('_backgroundSelector')._color;
-
-      this.setBackgroundImage();
-
-      return this;
+    onDataReady: function() {
+      this.setupEventListeners();
     },
 
-    setBackgroundImage: function () {
-      // Check device size
-      if (Adapt.device.screenSize === 'large' || Adapt.device.screenSize === 'medium') {
-        this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
-        if(this.model.get('_backgroundSelector').alt && !this.model.get('_backgroundSelector').alt == "") {
-          this.altEnabled = true;
-          this.altText = this.model.get('_backgroundSelector').alt;
-        }
-      } else {
-        if(this.model.get('_backgroundSelector')._mobile._isEnabled){
-          this.image = 'url('+this.model.get('_backgroundSelector')._mobile._src+')';
-          if(this.model.get('_backgroundSelector')._mobile.alt && !this.model.get('_backgroundSelector')._mobile.alt == "") {
-            this.altEnabled = true;
-            this.altText = this.model.get('_backgroundSelector')._mobile.alt;
-          }
-        }
-        if(this.model.get('_backgroundSelector')._hideOnMobile){
-          this.image = 'none';
-          this.altEnabled = false;
-        }
+    setupEventListeners: function() {
+      this.listenTo(Adapt, 'menuView:postRender articleView:postRender blockView:postRender componentView:postRender', this.loadView);
+    },
+
+    loadView: function (view) {
+      if (view.model.get("_backgroundSelector") && view.model.get('_backgroundSelector')._isEnabled) {
+        new BackgroundSelectorImageView({
+          model:view.model
+        });
       }
 
-      $(this.modelID).css({
-          "background-image": this.image,
-          "background-position": this.position,
-          "background-size": this.size,
-          "background-repeat": this.repeat,
-          "background-attachment": this.attachment,
-          "background-color": this.color
-      });
-
-      // Check for image alt tag
-      if(this.altEnabled) {
-        $(this.modelID).attr({
-            "aria-label": this.altText
+      if (view.model.get("_backgroundSelector")._video && view.model.get('_backgroundSelector')._video._isEnabled) {
+        new BackgroundSelectorVideoView({
+          model:view.model
         });
       }
 
     }
 
-});
+  }, Backbone.Events);
 
-Adapt.on('menuView:postRender articleView:postRender blockView:postRender componentView:postRender', function(view) {
-    if (view.model.get("_backgroundSelector") && view.model.get('_backgroundSelector')._isEnabled) {
-        new BackgroundSelectorView({
-            model:view.model
-        });
-    }
-});
+  BackgroundSelector.initialize();
 
-});
+  return BackgroundSelector;
+
+})
