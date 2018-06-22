@@ -67,7 +67,7 @@ The Background selector attribute group contains values for **_isEnabled**, **_h
 No known limitations.
 
 ----------------------------
-**Version number:**  2.0.6    
+**Version number:**  2.1.0    
 **Framework versions supported:**  2.0.4    
 **Author / maintainer:** DeltaNet with [contributors](https://github.com/deltanet/adapt-background-selector/graphs/contributors)     
 **Accessibility support:** Yes  
