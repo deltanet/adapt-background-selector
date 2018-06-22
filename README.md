@@ -18,7 +18,7 @@ The attributes listed below are properly formatted as JSON in [*example.json*](h
 
 ### Attributes
 
-The Background selector attribute group contains values for **_isEnabled**, **_hideOnMobile**, **_src**, **_position**, **_size**, **_repeat**, **_attachment**, **_color**, **_mobile**, and **_video**.
+The Background selector attribute group contains values for **_isEnabled**, **_hideOnMobile**, **_src**, **_position**, **_size**, **_repeat**, **_attachment**, **_color**, **_mobile**, **_gradient**, and **_video**.
 
 >**_isEnabled** (boolean):  Turns on and off the **Background selector** extension. Can be set to disable **Background selector** when not required.  
 
@@ -40,11 +40,17 @@ The Background selector attribute group contains values for **_isEnabled**, **_h
 
 >**_mobile** (object):  This `_mobile` attributes group stores the properties for an image used at mobile size. It contains values for **_isEnabled**, and **_src**.  
 
->>**_isEnabled** (boolean): If set to `true`, a different image will be used at mobile size.
+>>**_isEnabled** (boolean): If set to `true`, a different image will be used at mobile size.  
 
 >>**_src** (string): File name (including path) of the mobile image. Path should be relative to the *src* folder.  
 
 >>**alt** (string): This text becomes the image’s `alt` attribute.  
+
+>**_gradient** (object):  This `_gradient` attributes group stores the properties for the background gradient. It contains values for **_isEnabled**, **_type**, and **_colors**.  
+
+>>**_type** (string): Defines the type of gradient used. Options are `Bottom Left to Top Right`, `Left to Right`, `Top Left to Bottom Right`, `Top to Bottom`, `Radial`, `Radial Top`, `Radial Bottom`, `Radial Left`, and `Radial Right`.  
+
+>>**_colors** (string): Defines the colors used for the gradient. Format should be a comma separated list of Hex Color Codes.  
 
 >**_video** (object):  This `_video` attributes group stores the properties for an image used at mobile size. It contains values for **_isEnabled**, **_loopEnabled**, **_disableOnMobile**, and **_src**.  
 

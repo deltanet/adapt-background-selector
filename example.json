@@ -13,6 +13,11 @@
     "_isEnabled": true,
     "_src": "course/en/images/***.jpg"
   },
+  "_gradient": {
+    "_isEnabled": true,
+    "_type": "Left to Right", Options are "Bottom Left to Top Right" "Left to Right" "Top Left to Bottom Right" "Top to Bottom" "Radial" "Radial Top" "Radial Bottom" "Radial Left" "Radial Right"
+    "_colors": "#051937, #004d7a, #008793, #00bf72, #a8eb12"
+  },
   "_video": {
     "_isEnabled": false,
     "_loopEnabled": false,

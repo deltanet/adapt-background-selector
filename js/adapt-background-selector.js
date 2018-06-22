@@ -23,12 +23,13 @@ define([
         new BackgroundSelectorImageView({
           model:view.model
         });
-      }
 
-      if (view.model.get("_backgroundSelector")._video && view.model.get('_backgroundSelector')._video._isEnabled) {
-        new BackgroundSelectorVideoView({
-          model:view.model
-        });
+        if (view.model.get("_backgroundSelector")._video && view.model.get('_backgroundSelector')._video._isEnabled) {
+          new BackgroundSelectorVideoView({
+            model:view.model
+          });
+        }
+        
       }
 
     }

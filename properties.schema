@@ -137,8 +137,41 @@
                     }
                   }
                 },
+                "_gradient": {
+                  "type": "object",
+                  "legend": "Gradient",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Gradient Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_type": {
+                      "type": "string",
+                      "required": false,
+                      "default": "Top to Bottom",
+                      "title": "Type",
+                      "inputType": {"type": "Select", "options": ["Bottom Left to Top Right", "Left to Right", "Top Left to Bottom Right", "Top to Bottom", "Radial", "Radial Top", "Radial Bottom", "Radial Left", "Radial Right"]},
+                      "validators": []
+                    },
+                    "_colors": {
+                      "type": "string",
+                      "required": false,
+                      "default": "#cccccc, #333333",
+                      "title": "Colours",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Use a comma separated list of Hex Color Codes, e.g. #cccccc, #333333"
+                    }
+                  }
+                },
                 "_video": {
                   "type": "object",
+                  "legend": "Video",
                   "required": false,
                   "properties": {
                     "_isEnabled": {
@@ -302,8 +335,41 @@
                     }
                   }
                 },
+                "_gradient": {
+                  "type": "object",
+                  "legend": "Gradient",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Gradient Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_type": {
+                      "type": "string",
+                      "required": false,
+                      "default": "Top to Bottom",
+                      "title": "Type",
+                      "inputType": {"type": "Select", "options": ["Bottom Left to Top Right", "Left to Right", "Top Left to Bottom Right", "Top to Bottom", "Radial", "Radial Top", "Radial Bottom", "Radial Left", "Radial Right"]},
+                      "validators": []
+                    },
+                    "_colors": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Colours",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Use a comma separated list of Hex Color Codes, e.g. #ccc, #999"
+                    }
+                  }
+                },
                 "_video": {
                   "type": "object",
+                  "legend": "Video",
                   "required": false,
                   "properties": {
                     "_isEnabled": {
@@ -467,8 +533,41 @@
                     }
                   }
                 },
+                "_gradient": {
+                  "type": "object",
+                  "legend": "Gradient",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Gradient Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_type": {
+                      "type": "string",
+                      "required": false,
+                      "default": "Top to Bottom",
+                      "title": "Type",
+                      "inputType": {"type": "Select", "options": ["Bottom Left to Top Right", "Left to Right", "Top Left to Bottom Right", "Top to Bottom", "Radial", "Radial Top", "Radial Bottom", "Radial Left", "Radial Right"]},
+                      "validators": []
+                    },
+                    "_colors": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Colours",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Use a comma separated list of Hex Color Codes, e.g. #ccc, #999"
+                    }
+                  }
+                },
                 "_video": {
                   "type": "object",
+                  "legend": "Video",
                   "required": false,
                   "properties": {
                     "_isEnabled": {
@@ -632,8 +731,41 @@
                     }
                   }
                 },
+                "_gradient": {
+                  "type": "object",
+                  "legend": "Gradient",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Gradient Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_type": {
+                      "type": "string",
+                      "required": false,
+                      "default": "Top to Bottom",
+                      "title": "Type",
+                      "inputType": {"type": "Select", "options": ["Bottom Left to Top Right", "Left to Right", "Top Left to Bottom Right", "Top to Bottom", "Radial", "Radial Top", "Radial Bottom", "Radial Left", "Radial Right"]},
+                      "validators": []
+                    },
+                    "_colors": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Colours",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Use a comma separated list of Hex Color Codes, e.g. #ccc, #999"
+                    }
+                  }
+                },
                 "_video": {
                   "type": "object",
+                  "legend": "Video",
                   "required": false,
                   "properties": {
                     "_isEnabled": {
