@@ -2,17 +2,15 @@ define([
     'coreJS/adapt'
 ], function(Adapt) {
 
-var BackgroundSelectorVideoView = Backbone.View.extend({
+    var BackgroundSelectorVideoView = Backbone.View.extend({
 
-  className: "background-selector-video",
+    className: "background-selector-video",
 
     initialize: function () {
       this.render();
       this.listenTo(Adapt, "remove", this.remove);
       this.listenTo(Adapt, 'device:resize', this.deviceResize);
     },
-
-    events: {},
 
     render: function () {
       var data = this.model.toJSON();

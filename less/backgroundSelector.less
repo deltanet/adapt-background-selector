@@ -9,3 +9,22 @@
     display: none;
   }
 }
+
+.background-selector-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.background-selector-enabled {
+  .background-selector-image {
+    top: (@navigation-padding * 2) + @icon-size;
+  }
+  .menu-header {
+    position: relative;
+    z-index: 1;
+  }
+}

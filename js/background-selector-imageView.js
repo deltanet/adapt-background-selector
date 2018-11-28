@@ -4,18 +4,31 @@ define([
 
     var BackgroundSelectorImageView = Backbone.View.extend({
 
+    className: "background-selector-image",
+
     initialize: function () {
       this.render();
       this.listenTo(Adapt, 'remove', this.remove);
       this.listenTo(Adapt, 'device:changed', this.setBackgroundImage);
+      this.listenTo(Adapt, 'device:resize', this.resizeImage);
+      this.listenToOnce(Adapt, 'menuView:ready', this.setBackgroundImage);
     },
 
     render: function () {
-      // Set modelID based on view, if a menu then add '.menu-' to the _id
+      var data = this.model.toJSON();
+      var template = Handlebars.templates['imageBackground'];
+
+      // Set container based on the view, if a menu then add '.menu-' to the _id
       if (this.model.get('_type') == "menu") {
-        this.modelID = '.menu-'+this.model.get('_id');
+        this.container = $('.menu-'+this.model.get("_id")).find('.menu-container');
       } else {
-        this.modelID = '.'+this.model.get('_id');
+        this.container = $('.'+this.model.get("_id"));
+      }
+
+      $(this.el).html(template(data)).prependTo(this.container);
+
+      if (this.model.get('_type') == "menu") {
+        $(this.container).addClass('background-selector-enabled');
       }
 
       this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
@@ -70,7 +83,7 @@ define([
           break;
         }
         this.image = type+this.gradientColors+')';
-        $(this.modelID).css("background-image", this.image);
+        $(this.el).css("background-image", this.image);
 
       } else {
 
@@ -94,8 +107,7 @@ define([
             this.altEnabled = false;
           }
         }
-
-        $(this.modelID).css({
+        $(this.el).css({
             "background-image": this.image,
             "background-position": this.position,
             "background-size": this.size,
@@ -106,11 +118,20 @@ define([
 
         // Check for image alt tag
         if (this.altEnabled) {
-          $(this.modelID).attr({
+          $(this.el).attr({
               "aria-label": this.altText
           });
         }
+
+        this.resizeImage();
       }
+    },
+
+    resizeImage: function () {
+      $(this.el).css({
+          "max-width": $('#wrapper').width(),
+          "min-height": $(this.container).height()
+      });
     }
 
   });

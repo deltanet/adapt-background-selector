@@ -29,7 +29,7 @@ define([
             model:view.model
           });
         }
-        
+
       }
 
     }
@@ -40,4 +40,4 @@ define([
 
   return BackgroundSelector;
 
-})
+});
