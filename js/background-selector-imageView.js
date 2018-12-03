@@ -11,6 +11,7 @@ define([
       this.listenTo(Adapt, 'remove', this.remove);
       this.listenTo(Adapt, 'device:changed', this.setBackgroundImage);
       this.listenTo(Adapt, 'device:resize', this.resizeImage);
+      this.listenToOnce(Adapt, 'pageView:ready', this.resizeImage);
       this.listenToOnce(Adapt, 'menuView:ready', this.setBackgroundImage);
     },
 
