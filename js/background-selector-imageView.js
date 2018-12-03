@@ -122,9 +122,8 @@ define([
               "aria-label": this.altText
           });
         }
-
-        this.resizeImage();
       }
+      this.resizeImage();
     },
 
     resizeImage: function () {
