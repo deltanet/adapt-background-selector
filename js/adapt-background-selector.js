@@ -20,18 +20,17 @@ define([
 
     loadView: function (view) {
       if (view.model.get("_backgroundSelector") && view.model.get('_backgroundSelector')._isEnabled) {
-        new BackgroundSelectorImageView({
-          model:view.model
-        });
-
+        // Add video if enabled
         if (view.model.get("_backgroundSelector")._video && view.model.get('_backgroundSelector')._video._isEnabled) {
           new BackgroundSelectorVideoView({
             model:view.model
           });
         }
-
+        // Add image
+        new BackgroundSelectorImageView({
+          model:view.model
+        });
       }
-
     }
 
   }, Backbone.Events);
