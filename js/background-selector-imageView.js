@@ -29,9 +29,7 @@ define([
 
       $(this.el).html(template(data)).prependTo(this.container);
 
-      if (this.model.get('_type') == "menu") {
-        $(this.container).addClass('background-selector-enabled');
-      }
+      $(this.container).addClass('background-selector-enabled');
 
       this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
       this.altEnabled = false;
