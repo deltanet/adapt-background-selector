@@ -8,8 +8,13 @@ define([
 
     initialize: function () {
       this.render();
-      this.listenTo(Adapt, "remove", this.remove);
-      this.listenTo(Adapt, 'device:resize', this.deviceResize);
+
+      this.listenTo(Adapt, {
+        'remove': this.remove,
+        'popup:opened': this.notifyOpened,
+        'popup:closed': this.notifyClosed,
+        'device:resize': this.deviceResize
+      });
     },
 
     render: function () {
@@ -22,6 +27,15 @@ define([
 
       this.video = this.$('video')[0];
 
+      this.firstRun = true;
+      this.notifyIsOpen = false;
+      this.videoIsInView = false;
+
+      // Check if notify is visible
+      if ($('body').children('.notify').css('visibility') == 'visible') {
+        this.notifyOpened();
+      }
+
       $(this.modelID).on('onscreen', _.bind(this.onscreen, this));
 
       this.deviceResize();
@@ -29,20 +43,39 @@ define([
       return this;
     },
 
+    notifyOpened: function() {
+      this.notifyIsOpen = true;
+      this.playVideo(false);
+    },
+
+    notifyClosed: function() {
+      this.notifyIsOpen = false;
+      if (this.videoIsInView == true && this.firstRun) {
+        _.delay(_.bind(function() {
+          this.playVideo(true);
+        }, this), 400);
+      }
+    },
+
     onscreen: function(event, measurements) {
       var isOnscreenY = measurements.percentFromTop < 70 && measurements.percentFromTop > 0;
       var isOnscreenX = measurements.percentInviewHorizontal == 100;
 
       if (this.model.get('_isVisible') && isOnscreenY && isOnscreenX) {
-        this.playVideo(true);
+        if (this.notifyIsOpen == false) {
+          this.playVideo(true);
+        }
+        this.videoIsInView = true;
       } else {
         this.playVideo(false);
+        this.videoIsInView = false;
       }
     },
 
     playVideo: function(state) {
       if (state) {
         this.video.play();
+        this.firstRun = false;
       } else if (state === false) {
         this.video.pause();
       }
@@ -80,4 +113,4 @@ define([
 
   return BackgroundSelectorVideoView;
 
-})
+});
