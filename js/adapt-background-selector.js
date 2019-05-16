@@ -15,7 +15,7 @@ define([
     },
 
     setupEventListeners: function() {
-      this.listenTo(Adapt, 'menuView:postRender articleView:postRender blockView:postRender componentView:postRender', this.loadView);
+      this.listenTo(Adapt, 'menuView:postRender pageView:postRender articleView:postRender blockView:postRender componentView:postRender', this.loadView);
     },
 
     loadView: function (view) {

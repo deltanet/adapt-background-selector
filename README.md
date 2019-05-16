@@ -12,7 +12,7 @@ If **Background selector** has been uninstalled from the Adapt authoring tool, i
 
 ## Settings Overview
 
-**Background selector** is configured on three levels: article (*articles.json*), block (*blocks.json*) and component (*components.json*).
+**Background selector** is configured on four levels: page (*contentObjects.json*), article (*articles.json*), block (*blocks.json*) and component (*components.json*).
 
 The attributes listed below are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-background-selector/blob/master/example.json).  
 
@@ -67,7 +67,7 @@ The Background selector attribute group contains values for **_isEnabled**, **_h
 No known limitations.
 
 ----------------------------
-**Version number:**  2.2.6    
+**Version number:**  2.2.7    
 **Framework versions supported:**  2.0.4    
 **Author / maintainer:** DeltaNet with [contributors](https://github.com/deltanet/adapt-background-selector/graphs/contributors)     
 **Accessibility support:** Yes  
