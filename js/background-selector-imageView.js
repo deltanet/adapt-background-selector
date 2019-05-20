@@ -23,11 +23,17 @@ define([
       // Set container based on the view, if a menu then add '.menu-' to the _id
       if (this.model.get('_type') == "menu") {
         this.container = $('.menu-'+this.model.get("_id")).find('.menu-container');
+        this.containerInner = $('.menu-'+this.model.get("_id")).find('.menu-container-inner');
+        $(this.el).html(template(data)).prependTo(this.container);
+      } else if (this.model.get('_type') == "page") {
+        // Do not render template as the image will be added to the page directly with css
+        this.container = $('.page');
+        this.containerInner = $('.page-inner');
       } else {
         this.container = $('.'+this.model.get("_id"));
+        this.containerInner = $('.' + this.model.get('_id') + " > ." + this.model.get("_type") + "-inner");
+        $(this.el).html(template(data)).prependTo(this.container);
       }
-
-      $(this.el).html(template(data)).prependTo(this.container);
 
       $(this.container).addClass('background-selector-enabled');
 
@@ -83,7 +89,12 @@ define([
           break;
         }
         this.image = type+this.gradientColors+')';
-        $(this.el).css("background-image", this.image);
+
+        if (this.model.get('_type') == "page") {
+          $(this.container).css("background-image", this.image);
+        } else {
+          $(this.el).css("background-image", this.image);
+        }
 
       } else {
 
@@ -107,34 +118,53 @@ define([
             this.altEnabled = false;
           }
         }
-        $(this.el).css({
-            "background-image": this.image,
-            "background-position": this.position,
-            "background-size": this.size,
-            "background-repeat": this.repeat,
-            "background-attachment": this.attachment,
-            "background-color": this.color
-        });
+
+        if (this.model.get('_type') == "page") {
+          $(this.container).css({
+              "background-image": this.image,
+              "background-position": this.position,
+              "background-size": this.size,
+              "background-repeat": this.repeat,
+              "background-attachment": this.attachment,
+              "background-color": this.color
+          });
+        } else {
+          $(this.el).css({
+              "background-image": this.image,
+              "background-position": this.position,
+              "background-size": this.size,
+              "background-repeat": this.repeat,
+              "background-attachment": this.attachment,
+              "background-color": this.color
+          });
+        }
 
         // Check for image alt tag
         if (this.altEnabled) {
-          $(this.el).attr({
-              "aria-label": this.altText
-          });
+          if (this.model.get('_type') == "page") {
+            $(this.container).attr("aria-label", this.altText);
+          } else {
+            $(this.el).attr("aria-label", this.altText);
+          }
         }
       }
+      
       this.resizeImage();
     },
 
     resizeImage: function () {
-      $(this.el).css({
-          "max-width": $('#wrapper').width(),
-          "min-height": $(this.container).height()
-      });
+      this.padding = parseInt($(this.containerInner).css("padding-top").replace('px','')) + parseInt($(this.containerInner).css("padding-bottom").replace('px',''));
+
+      if (this.model.get('_type') !== "page") {
+        $(this.el).css({
+            "max-width": $('#wrapper').width(),
+            "min-height": $(this.container).height() - this.padding
+        });
+      }
     }
 
   });
 
   return BackgroundSelectorImageView;
 
-})
+});
