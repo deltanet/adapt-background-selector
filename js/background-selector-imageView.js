@@ -22,8 +22,8 @@ define([
 
       // Set container based on the view, if a menu then add '.menu-' to the _id
       if (this.model.get('_type') == "menu") {
-        this.container = $('.menu-'+this.model.get("_id")).find('.menu-container');
-        this.containerInner = $('.menu-'+this.model.get("_id")).find('.menu-container-inner');
+        this.container = $('.menu');
+        this.containerInner = $('.menu-container');
         $(this.el).html(template(data)).prependTo(this.container);
       } else if (this.model.get('_type') == "page") {
         // Do not render template as the image will be added to the page directly with css
@@ -148,7 +148,7 @@ define([
           }
         }
       }
-      
+
       this.resizeImage();
     },
 
