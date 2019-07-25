@@ -1,5 +1,5 @@
 define([
-  'coreJS/adapt',
+  'core/js/adapt',
   './background-selector-imageView',
   './background-selector-videoView'
 ], function(Adapt, BackgroundSelectorImageView, BackgroundSelectorVideoView) {
