@@ -31,16 +31,15 @@ define([
       this.notifyIsOpen = false;
       this.videoIsInView = false;
 
-      // Check if notify is visible
-      if ($('body').children('.notify').css('visibility') == 'visible') {
-        this.notifyOpened();
-      }
-
       $(this.modelID).on('onscreen', _.bind(this.onscreen, this));
 
       this.deviceResize();
 
-      return this;
+      _.delay(function() {
+        if ($('body').children('.notify').css('visibility') == 'visible') {
+          this.notifyOpened();
+        }
+      }.bind(this), 500);
     },
 
     notifyOpened: function() {
