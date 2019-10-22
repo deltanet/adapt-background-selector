@@ -13,6 +13,7 @@ define([
         'remove': this.remove,
         'popup:opened': this.notifyOpened,
         'popup:closed': this.notifyClosed,
+        'pageView:ready': this.pageReady,
         'device:resize': this.deviceResize
       });
     },
@@ -31,8 +32,6 @@ define([
       this.notifyIsOpen = false;
       this.videoIsInView = false;
 
-      $(this.modelID).on('onscreen', _.bind(this.onscreen, this));
-
       this.deviceResize();
 
       _.delay(function() {
@@ -42,6 +41,10 @@ define([
       }.bind(this), 500);
     },
 
+    pageReady: function () {
+      $(this.modelID).on('onscreen', _.bind(this.onscreen, this));
+    },
+
     notifyOpened: function() {
       this.notifyIsOpen = true;
       this.playVideo(false);
@@ -49,9 +52,10 @@ define([
 
     notifyClosed: function() {
       this.notifyIsOpen = false;
-      if (this.videoIsInView == true && this.firstRun) {
+      if (this.videoIsInView && this.firstRun) {
         _.delay(_.bind(function() {
           this.playVideo(true);
+          this.deviceResize();
         }, this), 400);
       }
     },
