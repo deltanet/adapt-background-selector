@@ -153,12 +153,21 @@ define([
     },
 
     resizeImage: function () {
-      this.padding = parseInt($(this.containerInner).css("padding-top").replace('px','')) + parseInt($(this.containerInner).css("padding-bottom").replace('px',''));
+      var paddingTop = 0;
+      var paddingBottom = 0;
+
+      if ($(this.containerInner).css("padding-top")) {
+        paddingTop = parseInt($(this.containerInner).css("padding-top").replace('px',''));
+      }
+
+      if ($(this.containerInner).css("padding-bottom")) {
+        paddingBottom = parseInt($(this.containerInner).css("padding-bottom").replace('px',''));
+      }
 
       if (this.model.get('_type') !== "page") {
         $(this.el).css({
             "max-width": $('#wrapper').width(),
-            "min-height": $(this.container).height() - this.padding
+            "min-height": $(this.container).height() - (paddingTop + paddingBottom)
         });
       }
     }
