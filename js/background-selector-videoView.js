@@ -11,8 +11,8 @@ define([
 
       this.listenTo(Adapt, {
         'remove': this.remove,
-        'popup:opened': this.notifyOpened,
-        'popup:closed': this.notifyClosed,
+        'popup:opened': this.popupOpened,
+        'popup:closed': this.popupClosed,
         'pageView:ready': this.pageReady,
         'device:resize': this.deviceResize
       });
@@ -30,14 +30,13 @@ define([
 
       this.firstRun = true;
       this.notifyIsOpen = false;
+      this.audioPromptIsOpen = false;
       this.videoIsInView = false;
 
       this.deviceResize();
 
       _.delay(function() {
-        if ($('body').children('.notify').css('visibility') == 'visible') {
-          this.notifyOpened();
-        }
+        this.popupOpened();
       }.bind(this), 500);
     },
 
@@ -45,14 +44,35 @@ define([
       $(this.modelID).on('onscreen', _.bind(this.onscreen, this));
     },
 
-    notifyOpened: function() {
-      this.notifyIsOpen = true;
+    popupOpened: function() {
       this.playVideo(false);
+
+      if ($('body').children('.audio-prompt').css('visibility') == 'visible') {
+        this.audioPromptOpened();
+      } else if ($('body').children('.notify').css('visibility') == 'visible') {
+        this.notifyOpened();
+      }
     },
 
-    notifyClosed: function() {
-      this.notifyIsOpen = false;
-      if (this.videoIsInView && this.firstRun) {
+    notifyOpened: function() {
+      this.notifyIsOpen = true;
+    },
+
+    audioPromptOpened: function() {
+      this.audioPromptIsOpen = true;
+    },
+
+    popupClosed: function() {
+      if (this.videoIsInView && this.audioPromptIsOpen) {
+        this.audioPromptIsOpen = false;
+        _.delay(_.bind(function() {
+          this.playVideo(true);
+          this.deviceResize();
+        }, this), 400);
+      }
+
+      if (this.notifyIsOpen && this.videoIsInView && this.firstRun) {
+        this.notifyIsOpen = false;
         _.delay(_.bind(function() {
           this.playVideo(true);
           this.deviceResize();
@@ -65,7 +85,7 @@ define([
       var isOnscreenX = measurements.percentInviewHorizontal == 100;
 
       if (this.model.get('_isVisible') && isOnscreenY && isOnscreenX) {
-        if (this.notifyIsOpen == false) {
+        if (!this.notifyIsOpen && !this.audioPromptIsOpen) {
           this.playVideo(true);
         }
         this.videoIsInView = true;
