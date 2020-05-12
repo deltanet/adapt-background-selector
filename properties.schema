@@ -100,9 +100,8 @@
                   "required": false,
                   "default": "#fff",
                   "title": "Background Colour",
-                  "inputType": "Text",
-                  "validators": [],
-                  "help": "Set the background colour of the article using a hex code format, e.g. #fff for the colour white."
+                  "inputType": "ColourPicker",
+                  "validators": []
                 },
                 "_mobile": {
                   "type":"object",
@@ -298,9 +297,8 @@
                   "required": false,
                   "default": "#fff",
                   "title": "Background Colour",
-                  "inputType": "Text",
-                  "validators": [],
-                  "help": "Set the background colour of the article using a hex code format, e.g. #fff for the colour white."
+                  "inputType": "ColourPicker",
+                  "validators": []
                 },
                 "_mobile": {
                   "type":"object",
@@ -496,9 +494,8 @@
                   "required": false,
                   "default": "#fff",
                   "title": "Background Colour",
-                  "inputType": "Text",
-                  "validators": [],
-                  "help": "Set the background colour of the block using a hex code format, e.g. #fff for the colour white."
+                  "inputType": "ColourPicker",
+                  "validators": []
                 },
                 "_mobile": {
                   "type":"object",
@@ -694,9 +691,8 @@
                   "required": false,
                   "default": "#fff",
                   "title": "Background Colour",
-                  "inputType": "Text",
-                  "validators": [],
-                  "help": "Set the background colour of the component using a hex code format, e.g. #fff for the colour white."
+                  "inputType": "ColourPicker",
+                  "validators": []
                 },
                 "_mobile": {
                   "type":"object",
