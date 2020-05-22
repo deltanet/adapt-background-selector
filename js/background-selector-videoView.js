@@ -63,20 +63,26 @@ define([
     },
 
     popupClosed: function() {
-      if (this.videoIsInView && this.audioPromptIsOpen) {
+      if (this.audioPromptIsOpen) {
         this.audioPromptIsOpen = false;
-        _.delay(_.bind(function() {
-          this.playVideo(true);
-          this.deviceResize();
-        }, this), 400);
+
+        if (this.videoIsInView) {
+          _.delay(_.bind(function() {
+            this.playVideo(true);
+            this.deviceResize();
+          }, this), 400);
+        }
       }
 
-      if (this.notifyIsOpen && this.videoIsInView && this.firstRun) {
+      if (this.notifyIsOpen) {
         this.notifyIsOpen = false;
-        _.delay(_.bind(function() {
-          this.playVideo(true);
-          this.deviceResize();
-        }, this), 400);
+
+        if (this.videoIsInView && this.firstRun) {
+          _.delay(_.bind(function() {
+            this.playVideo(true);
+            this.deviceResize();
+          }, this), 400);
+        }
       }
     },
 
@@ -96,6 +102,7 @@ define([
     },
 
     playVideo: function(state) {
+      this.deviceResize();
       if (state) {
         this.video.play();
         this.firstRun = false;
