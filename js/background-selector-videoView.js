@@ -45,11 +45,11 @@ define([
     },
 
     popupOpened: function() {
-      this.playVideo(false);
-
       if ($('body').children('.audio-prompt').css('visibility') == 'visible') {
+        this.playVideo(false);
         this.audioPromptOpened();
       } else if ($('body').children('.notify').css('visibility') == 'visible') {
+        this.playVideo(false);
         this.notifyOpened();
       }
     },
