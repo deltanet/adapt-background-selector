@@ -33,8 +33,8 @@
                 },
                 "_hideOnMobile": {
                   "type":"boolean",
-                  "required": true,
-                  "default": false,
+                  "required": false,
+                  "default": true,
                   "title": "Hide On Mobile",
                   "inputType": "Checkbox",
                   "validators": [],
@@ -230,8 +230,8 @@
                 },
                 "_hideOnMobile": {
                   "type":"boolean",
-                  "required": true,
-                  "default": false,
+                  "required": false,
+                  "default": true,
                   "title": "Hide On Mobile",
                   "inputType": "Checkbox",
                   "validators": [],
@@ -427,8 +427,8 @@
                 },
                 "_hideOnMobile": {
                   "type":"boolean",
-                  "required": true,
-                  "default": false,
+                  "required": false,
+                  "default": true,
                   "title": "Hide On Mobile",
                   "inputType": "Checkbox",
                   "validators": [],
@@ -624,8 +624,8 @@
                 },
                 "_hideOnMobile": {
                   "type":"boolean",
-                  "required": true,
-                  "default": false,
+                  "required": false,
+                  "default": true,
                   "title": "Hide On Mobile",
                   "inputType": "Checkbox",
                   "validators": [],

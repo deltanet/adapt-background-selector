@@ -2,7 +2,7 @@
 
 "_backgroundSelector": {
   "_isEnabled": true,
-  "_hideOnMobile": false,
+  "_hideOnMobile": true,
   "_src": "course/en/images/***.jpg",
   "alt": "",
   "_position": "top",
