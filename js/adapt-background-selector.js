@@ -2,19 +2,19 @@ define([
   'core/js/adapt',
   './background-selector-imageView',
   './background-selector-videoView'
-], function(Adapt, BackgroundSelectorImageView, BackgroundSelectorVideoView) {
+], function (Adapt, BackgroundSelectorImageView, BackgroundSelectorVideoView) {
 
   var BackgroundSelector = _.extend({
 
-    initialize: function() {
+    initialize: function () {
       this.listenToOnce(Adapt, "app:dataReady", this.onDataReady);
     },
 
-    onDataReady: function() {
+    onDataReady: function () {
       this.setupEventListeners();
     },
 
-    setupEventListeners: function() {
+    setupEventListeners: function () {
       this.listenTo(Adapt, 'menuView:postRender pageView:postRender articleView:postRender blockView:postRender componentView:postRender', this.loadView);
     },
 

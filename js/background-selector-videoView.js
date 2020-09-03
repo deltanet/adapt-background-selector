@@ -1,8 +1,8 @@
 define([
-    'core/js/adapt'
-], function(Adapt) {
+  'core/js/adapt'
+], function (Adapt) {
 
-    var BackgroundSelectorVideoView = Backbone.View.extend({
+  var BackgroundSelectorVideoView = Backbone.View.extend({
 
     className: "background-selector-video",
 
@@ -41,7 +41,7 @@ define([
     },
 
     pageReady: function () {
-      $(this.modelID).on('onscreen', _.bind(this.onscreen, this));
+      $(this.modelID).on('onscreen', this.onscreen.bind(this));
     },
 
     popupOpened: function() {
@@ -67,10 +67,10 @@ define([
         this.audioPromptIsOpen = false;
 
         if (this.videoIsInView) {
-          _.delay(_.bind(function() {
+          _.delay(function() {
             this.playVideo(true);
             this.deviceResize();
-          }, this), 400);
+          }.bind(this), 400);
         }
       }
 
@@ -78,10 +78,10 @@ define([
         this.notifyIsOpen = false;
 
         if (this.videoIsInView && this.firstRun) {
-          _.delay(_.bind(function() {
+          _.delay(function() {
             this.playVideo(true);
             this.deviceResize();
-          }, this), 400);
+          }.bind(this), 400);
         }
       }
     },
