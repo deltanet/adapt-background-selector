@@ -20,7 +20,7 @@ define([
       // Set container based on the view, if a menu then add '.menu-' to the _id
       if (this.model.get('_type') == "menu") {
         this.container = $('.menu');
-        this.containerInner = $('.menu__item-container');
+        this.containerInner = $('.menu__inner');
         $(this.el).html(template(data)).prependTo(this.container);
       } else if (this.model.get('_type') == "page") {
         // Do not render template as the image will be added to the page directly with css
@@ -98,7 +98,7 @@ define([
         // Check device size
         if (Adapt.device.screenSize === 'large' || Adapt.device.screenSize === 'medium') {
           this.image = 'url('+this.model.get('_backgroundSelector')._src+')';
-          if(this.model.get('_backgroundSelector').alt && !this.model.get('_backgroundSelector').alt == "") {
+          if (this.model.get('_backgroundSelector').alt && !this.model.get('_backgroundSelector').alt == "") {
             this.altEnabled = true;
             this.altText = this.model.get('_backgroundSelector').alt;
           }
@@ -118,21 +118,21 @@ define([
 
         if (this.model.get('_type') == "page") {
           $(this.container).css({
-              "background-image": this.image,
-              "background-position": this.position,
-              "background-size": this.size,
-              "background-repeat": this.repeat,
-              "background-attachment": this.attachment,
-              "background-color": this.color
+            "background-image": this.image,
+            "background-position": this.position,
+            "background-size": this.size,
+            "background-repeat": this.repeat,
+            "background-attachment": this.attachment,
+            "background-color": this.color
           });
         } else {
           $(this.el).css({
-              "background-image": this.image,
-              "background-position": this.position,
-              "background-size": this.size,
-              "background-repeat": this.repeat,
-              "background-attachment": this.attachment,
-              "background-color": this.color
+            "background-image": this.image,
+            "background-position": this.position,
+            "background-size": this.size,
+            "background-repeat": this.repeat,
+            "background-attachment": this.attachment,
+            "background-color": this.color
           });
         }
 
