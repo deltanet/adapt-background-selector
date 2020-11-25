@@ -87,10 +87,11 @@ define([
     },
 
     onscreen: function(event, measurements) {
-      var isOnscreenY = measurements.percentFromTop < 70 && measurements.percentFromTop > 0;
+      var visible = this.model.get('_isVisible');
       var isOnscreenX = measurements.percentInviewHorizontal == 100;
+      var isOnscreenY = measurements.percentFromTop > 30 && measurements.percentFromTop < 101;
 
-      if (this.model.get('_isVisible') && isOnscreenY && isOnscreenX) {
+      if (visible && isOnscreenX && isOnscreenY) {
         if (!this.notifyIsOpen && !this.audioPromptIsOpen) {
           this.playVideo(true);
         }
@@ -133,9 +134,9 @@ define([
 
     checkDevice: function () {
       if (Adapt.device.screenSize === 'small' && this.model.get('_backgroundSelector')._video._disableOnMobile) {
-        this.$el.addClass('hidden');
+        this.$el.addClass('is-hidden');
       } else {
-        this.$el.removeClass('hidden');
+        this.$el.removeClass('is-hidden');
       }
     }
 
