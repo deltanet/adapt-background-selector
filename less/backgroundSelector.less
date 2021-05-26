@@ -10,6 +10,20 @@
   &.is-hidden {
     display: none;
   }
+
+  video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &.is-ie {
+    video {
+      object-fit: unset;
+      height: auto;
+      width: auto;
+    }
+  }
 }
 
 .background-selector-enabled {

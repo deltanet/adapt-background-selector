@@ -14,7 +14,7 @@ define([
         'popup:opened': this.popupOpened,
         'popup:closed': this.popupClosed,
         'pageView:ready': this.pageReady,
-        'device:resize': this.deviceResize
+        'device:changed': this.deviceChanged
       });
     },
 
@@ -23,6 +23,12 @@ define([
       var template = Handlebars.templates['videoBackground'];
 
       $(this.el).html(template(data)).prependTo('.'+this.model.get("_id"));
+
+      this.isIE = $('html').is('.ie');
+
+      if (this.isIE) {
+        this.$el.addClass('is-ie');
+      }
 
       this.modelID = '.'+this.model.get('_id');
 
@@ -33,7 +39,7 @@ define([
       this.audioPromptIsOpen = false;
       this.videoIsInView = false;
 
-      this.deviceResize();
+      this.deviceChanged();
 
       _.delay(function() {
         this.popupOpened();
@@ -69,7 +75,7 @@ define([
         if (this.videoIsInView) {
           _.delay(function() {
             this.playVideo(true);
-            this.deviceResize();
+            this.deviceChanged();
           }.bind(this), 400);
         }
       }
@@ -80,7 +86,7 @@ define([
         if (this.videoIsInView && this.firstRun) {
           _.delay(function() {
             this.playVideo(true);
-            this.deviceResize();
+            this.deviceChanged();
           }.bind(this), 400);
         }
       }
@@ -103,7 +109,7 @@ define([
     },
 
     playVideo: function(state) {
-      this.deviceResize();
+      this.deviceChanged();
       if (state) {
         this.video.play();
         this.firstRun = false;
@@ -112,27 +118,7 @@ define([
       }
     },
 
-    deviceResize: function () {
-      var width = $(this.modelID).width();
-      var height = $(this.modelID).height();
-
-      var videoWidth = this.$('video').width();
-      var videoHeight = this.$('video').height();
-
-      this.$('video').removeAttr("style");
-      this.$('video').width(width);
-
-      videoWidth = this.$('video').width();
-      videoHeight = this.$('video').height();
-
-      if (height > videoHeight) {
-        this.$('video').removeAttr("style");
-        this.$('video').height(height);
-      }
-      this.checkDevice();
-    },
-
-    checkDevice: function () {
+    deviceChanged: function () {
       if (Adapt.device.screenSize === 'small' && this.model.get('_backgroundSelector')._video._disableOnMobile) {
         this.$el.addClass('is-hidden');
       } else {
