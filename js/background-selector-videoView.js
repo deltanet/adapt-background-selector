@@ -13,7 +13,6 @@ define([
         'remove': this.remove,
         'popup:opened': this.popupOpened,
         'popup:closed': this.popupClosed,
-        'pageView:ready': this.pageReady,
         'device:changed': this.deviceChanged
       });
     },
@@ -39,15 +38,13 @@ define([
       this.audioPromptIsOpen = false;
       this.videoIsInView = false;
 
+      $(this.modelID).on('onscreen', this.onscreen.bind(this));
+
       this.deviceChanged();
 
       _.delay(function() {
         this.popupOpened();
       }.bind(this), 500);
-    },
-
-    pageReady: function () {
-      $(this.modelID).on('onscreen', this.onscreen.bind(this));
     },
 
     popupOpened: function() {
@@ -95,7 +92,8 @@ define([
     onscreen: function(event, measurements) {
       var visible = this.model.get('_isVisible');
       var isOnscreenX = measurements.percentInviewHorizontal == 100;
-      var isOnscreenY = measurements.percentFromTop > 30 && measurements.percentFromTop < 101;
+      var isOnscreenY = (measurements.percentFromTop < 50) && (measurements.percentFromTop > -10);
+
 
       if (visible && isOnscreenX && isOnscreenY) {
         if (!this.notifyIsOpen && !this.audioPromptIsOpen) {
