@@ -7,15 +7,14 @@ define([
     className: "background-selector-video",
 
     initialize: function () {
-      this.render();
-
       this.listenTo(Adapt, {
         'remove': this.remove,
         'popup:opened': this.popupOpened,
         'popup:closed': this.popupClosed,
-        'pageView:ready': this.pageReady,
         'device:resize': this.deviceResize
       });
+
+      this.render();
     },
 
     render: function () {
@@ -35,13 +34,11 @@ define([
 
       this.deviceResize();
 
+      $(this.modelID).on('onscreen', _.bind(this.onscreen, this));
+
       _.delay(function() {
         this.popupOpened();
       }.bind(this), 500);
-    },
-
-    pageReady: function () {
-      $(this.modelID).on('onscreen', _.bind(this.onscreen, this));
     },
 
     popupOpened: function() {
