@@ -1,42 +1,35 @@
-define([
-  'core/js/adapt',
-  './background-selector-imageView',
-  './background-selector-videoView'
-], function (Adapt, BackgroundSelectorImageView, BackgroundSelectorVideoView) {
+import Adapt from 'core/js/adapt';
+import BackgroundSelectorImageView from './background-selector-imageView';
+import BackgroundSelectorVideoView from './background-selector-videoView';
 
-  var BackgroundSelector = _.extend({
+class BackgroundSelector extends Backbone.Controller {
 
-    initialize: function () {
-      this.listenToOnce(Adapt, "app:dataReady", this.onDataReady);
-    },
+  initialize() {
+    this.listenToOnce(Adapt, 'app:dataReady', this.onDataReady);
+  }
 
-    onDataReady: function () {
-      this.setupEventListeners();
-    },
+  onDataReady() {
+    this.setupEventListeners();
+  }
 
-    setupEventListeners: function () {
-      this.listenTo(Adapt, 'menuView:postRender pageView:postRender articleView:postRender blockView:postRender componentView:postRender', this.loadView);
-    },
+  setupEventListeners() {
+    this.listenTo(Adapt, 'contentObjectView:postRender articleView:postRender blockView:postRender componentView:postRender', this.loadView);
+  }
 
-    loadView: function (view) {
-      if (view.model.get("_backgroundSelector") && view.model.get('_backgroundSelector')._isEnabled) {
-        // Add video if enabled
-        if (view.model.get("_backgroundSelector")._video && view.model.get('_backgroundSelector')._video._isEnabled) {
-          new BackgroundSelectorVideoView({
-            model:view.model
-          });
-        }
-        // Add image
-        new BackgroundSelectorImageView({
-          model:view.model
+  loadView(view) {
+    if (view.model.get("_backgroundSelector") && view.model.get('_backgroundSelector')._isEnabled) {
+      // Add video if enabled
+      if (view.model.get("_backgroundSelector")._video && view.model.get('_backgroundSelector')._video._isEnabled) {
+        new BackgroundSelectorVideoView({
+          model: view.model
         });
       }
+      // Add image
+      new BackgroundSelectorImageView({
+        model: view.model
+      });
     }
+  }
+}
 
-  }, Backbone.Events);
-
-  BackgroundSelector.initialize();
-
-  return BackgroundSelector;
-
-});
+export default new BackgroundSelector();
