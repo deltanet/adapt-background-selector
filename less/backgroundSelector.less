@@ -27,12 +27,14 @@
 }
 
 .background-selector-enabled {
-  .menu__inner,
-  .page__inner,
-  .article__inner,
-  .block__inner,
-  .component__inner {
-    position: relative;
+  position: relative;
+
+  &.menu {
+    overflow: hidden;
+
+    .menu__inner {
+      position: relative;
+    }
   }
 
   .background-selector-image {
@@ -42,12 +44,5 @@
     bottom: 0;
     left: 0;
     .l-container-responsive(@max-width);
-  }
-}
-
-.menu {
-  &.background-selector-enabled {
-    position: relative;
-    overflow: hidden;
   }
 }
