@@ -2,7 +2,7 @@
 
 **Background selector** is an *extension* for the [Adapt framework](https://github.com/adaptlearning/adapt_framework).   
 
-This extension allows an image to be added to an article, block or component background.
+This extension allows an image to be added to a page, menu, article, block or component as a background.
 
 ## Installation
 
@@ -18,33 +18,35 @@ The attributes listed below are properly formatted as JSON in [*example.json*](h
 
 ### Attributes
 
-The Background selector attribute group contains values for **_isEnabled**, **_hideOnMobile**, **_src**, **_position**, **_size**, **_repeat**, **_attachment**, **_color**, **_mobile**, **_gradient**, and **_video**.
+The Background selector attribute group contains values for **_isEnabled**, **_color**, **_image**, **_gradient**, and **_video**.
 
 >**_isEnabled** (boolean):  Turns on and off the **Background selector** extension. Can be set to disable **Background selector** when not required.  
 
->**_hideOnMobile** (boolean):  If set to `true`, the image will be hidden on mobile.
-
->**_src** (string): File name (including path) of the image. Path should be relative to the *src* folder.  
-
->**alt** (string): This text becomes the image’s `alt` attribute.  
-
->**_position** (string): Defines the CSS background position class.
-
->**_size** (string): Defines the CSS background size class.
-
->**_repeat** (string): Defines the CSS background repeat class.
-
->**_attachment** (string): Defines the CSS background attachment class.
-
 >**_color** (string): Defines the CSS background color class.
 
->**_mobile** (object):  This `_mobile` attributes group stores the properties for an image used at mobile size. It contains values for **_isEnabled**, and **_src**.  
+>**_image** (object):  This `_image` attributes group stores the properties for the images. It contains values for **_isEnabled**, **_position**, **_size**, **_repeat**, **_attachment**, **_largeSrc**, **largeAlt**, **_mediumSrc**, **mediumAlt**, **_smallSrc**, and **smallAlt**.  
 
->>**_isEnabled** (boolean): If set to `true`, a different image will be used at mobile size.  
+>>**_isEnabled** (boolean): If set to `true`, the defined images will display.  
 
->>**_src** (string): File name (including path) of the mobile image. Path should be relative to the *src* folder.  
+>>**_position** (string): Defines the CSS background position class.
 
->>**alt** (string): This text becomes the image’s `alt` attribute.  
+>>**_size** (string): Defines the CSS background size class.
+
+>>**_repeat** (string): Defines the CSS background repeat class.
+
+>>**_attachment** (string): Defines the CSS background attachment class.
+
+>>**_largeSrc** (string): File name (including path) of the large image. Path should be relative to the *src* folder.  
+
+>>**largeAlt** (string): This text becomes the large image’s `alt` attribute.  
+
+>>**_mediumSrc** (string): File name (including path) of the medium image. Path should be relative to the *src* folder.  
+
+>>**mediumAlt** (string): This text becomes the medium image’s `alt` attribute.  
+
+>>**_smallSrc** (string): File name (including path) of the mobile image. Path should be relative to the *src* folder.  
+
+>>**smallAlt** (string): This text becomes the mobile image’s `alt` attribute.  
 
 >**_gradient** (object):  This `_gradient` attributes group stores the properties for the background gradient. It contains values for **_isEnabled**, **_type**, and **_colors**.  
 
@@ -67,8 +69,8 @@ The Background selector attribute group contains values for **_isEnabled**, **_h
 No known limitations.
 
 ----------------------------
-**Version number:**  3.0.1    
-**Framework versions supported:**  5+    
+**Version number:**  4.0.0    
+**Framework versions supported:**  5.8+    
 **Author / maintainer:** DeltaNet with [contributors](https://github.com/deltanet/adapt-background-selector/graphs/contributors)     
 **Accessibility support:** Yes  
 **RTL support:** Yes  
