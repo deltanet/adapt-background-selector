@@ -27,7 +27,12 @@
 }
 
 .background-selector-enabled {
-  position: relative;
+  .page__inner,
+  .article__inner,
+  .block__inner,
+  .component__inner {
+    position: relative;
+  }
 
   &.menu {
     overflow: hidden;
