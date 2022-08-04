@@ -88,6 +88,14 @@
                       "validators": [],
                       "help": "Set the attachment property of the graphic with the pre-defined CSS styles."
                     },
+                    "_opacity": {
+                      "type": "number",
+                      "required": true,
+                      "default": 1,
+                      "title": "Opacity",
+                      "inputType": {"type": "Select", "options": [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]},
+                      "validators": ["number"]
+                    },
                     "_largeSrc": {
                       "type": "string",
                       "required": false,
@@ -295,6 +303,14 @@
                       "inputType": {"type": "Select", "options": ["scroll", "fixed"]},
                       "validators": [],
                       "help": "Set the attachment property of the graphic with the pre-defined CSS styles."
+                    },
+                    "_opacity": {
+                      "type": "number",
+                      "required": true,
+                      "default": 1,
+                      "title": "Opacity",
+                      "inputType": {"type": "Select", "options": [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]},
+                      "validators": ["number"]
                     },
                     "_largeSrc": {
                       "type": "string",
@@ -504,6 +520,14 @@
                       "validators": [],
                       "help": "Set the attachment property of the graphic with the pre-defined CSS styles."
                     },
+                    "_opacity": {
+                      "type": "number",
+                      "required": true,
+                      "default": 1,
+                      "title": "Opacity",
+                      "inputType": {"type": "Select", "options": [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]},
+                      "validators": ["number"]
+                    },
                     "_largeSrc": {
                       "type": "string",
                       "required": false,
@@ -711,6 +735,14 @@
                       "inputType": {"type": "Select", "options": ["scroll", "fixed"]},
                       "validators": [],
                       "help": "Set the attachment property of the graphic with the pre-defined CSS styles."
+                    },
+                    "_opacity": {
+                      "type": "number",
+                      "required": true,
+                      "default": 1,
+                      "title": "Opacity",
+                      "inputType": {"type": "Select", "options": [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]},
+                      "validators": ["number"]
                     },
                     "_largeSrc": {
                       "type": "string",

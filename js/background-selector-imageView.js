@@ -37,6 +37,7 @@ export default class BackgroundSelectorImageView extends Backbone.View {
     this.size = this.config._size;
     this.repeat = this.config._repeat;
     this.attachment = this.config._attachment;
+    this.opacity = this.config._opacity ? this.config._opacity: 1;
 
     this.setBackgroundImage();
   }
@@ -83,7 +84,8 @@ export default class BackgroundSelectorImageView extends Backbone.View {
         "background-position": this.position,
         "background-size": this.size,
         "background-repeat": this.repeat,
-        "background-attachment": this.attachment
+        "background-attachment": this.attachment,
+        "opacity": this.opacity
       });
     }
 

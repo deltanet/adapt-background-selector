@@ -24,7 +24,7 @@ The Background selector attribute group contains values for **_isEnabled**, **_c
 
 >**_color** (string): Defines the CSS background color class.
 
->**_image** (object):  This `_image` attributes group stores the properties for the images. It contains values for **_isEnabled**, **_position**, **_size**, **_repeat**, **_attachment**, **_largeSrc**, **largeAlt**, **_mediumSrc**, **mediumAlt**, **_smallSrc**, and **smallAlt**.  
+>**_image** (object):  This `_image` attributes group stores the properties for the images. It contains values for **_isEnabled**, **_position**, **_size**, **_repeat**, **_attachment**, **_opacity**, **_largeSrc**, **largeAlt**, **_mediumSrc**, **mediumAlt**, **_smallSrc**, and **smallAlt**.  
 
 >>**_isEnabled** (boolean): If set to `true`, the defined images will display.  
 
@@ -35,6 +35,8 @@ The Background selector attribute group contains values for **_isEnabled**, **_c
 >>**_repeat** (string): Defines the CSS background repeat class.
 
 >>**_attachment** (string): Defines the CSS background attachment class.
+
+>>**_opacity** (string): Defines the opacity of the image.
 
 >>**_largeSrc** (string): File name (including path) of the large image. Path should be relative to the *src* folder.  
 
@@ -69,7 +71,7 @@ The Background selector attribute group contains values for **_isEnabled**, **_c
 No known limitations.
 
 ----------------------------
-**Version number:**  4.0.1    
+**Version number:**  4.1.0    
 **Framework versions supported:**  5.8+    
 **Author / maintainer:** DeltaNet with [contributors](https://github.com/deltanet/adapt-background-selector/graphs/contributors)     
 **Accessibility support:** Yes  
