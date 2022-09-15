@@ -225,6 +225,48 @@
                       "validators": []
                     }
                   }
+                },
+                "_parallax": {
+                  "type": "object",
+                  "legend": "Parallax",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_items": {
+                      "type": "array",
+                      "required": true,
+                      "title": "Layers",
+                      "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                          "_src": {
+                            "type": "string",
+                            "required": true,
+                            "default": "",
+                            "title": "Graphic",
+                            "inputType": "Asset:image",
+                            "validators": []
+                          },
+                          "_offset": {
+                            "type": "string",
+                            "required": true,
+                            "default": 0.9,
+                            "title": "Offset",
+                            "inputType": {"type": "Select", "options": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]},
+                            "validators": []
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -441,6 +483,48 @@
                       "validators": []
                     }
                   }
+                },
+                "_parallax": {
+                  "type": "object",
+                  "legend": "Parallax",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_items": {
+                      "type": "array",
+                      "required": true,
+                      "title": "Layers",
+                      "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                          "_src": {
+                            "type": "string",
+                            "required": true,
+                            "default": "",
+                            "title": "Graphic",
+                            "inputType": "Asset:image",
+                            "validators": []
+                          },
+                          "_offset": {
+                            "type": "string",
+                            "required": true,
+                            "default": 0.9,
+                            "title": "Offset",
+                            "inputType": {"type": "Select", "options": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]},
+                            "validators": []
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -655,6 +739,48 @@
                       "title": "Video Asset",
                       "inputType": "Asset:video",
                       "validators": []
+                    }
+                  }
+                },
+                "_parallax": {
+                  "type": "object",
+                  "legend": "Parallax",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_items": {
+                      "type": "array",
+                      "required": true,
+                      "title": "Layers",
+                      "items": {
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                          "_src": {
+                            "type": "string",
+                            "required": true,
+                            "default": "",
+                            "title": "Graphic",
+                            "inputType": "Asset:image",
+                            "validators": []
+                          },
+                          "_offset": {
+                            "type": "string",
+                            "required": true,
+                            "default": 0.9,
+                            "title": "Offset",
+                            "inputType": {"type": "Select", "options": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]},
+                            "validators": []
+                          }
+                        }
+                      }
                     }
                   }
                 }

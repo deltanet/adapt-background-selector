@@ -1,6 +1,7 @@
 import Adapt from 'core/js/adapt';
 import BackgroundSelectorImageView from './background-selector-imageView';
 import BackgroundSelectorVideoView from './background-selector-videoView';
+import BackgroundSelectorParallaxView from './background-selector-parallaxView';
 
 class BackgroundSelector extends Backbone.Controller {
 
@@ -80,6 +81,13 @@ class BackgroundSelector extends Backbone.Controller {
     // Video
     if (view.model.get('_backgroundSelector')._video && view.model.get('_backgroundSelector')._video._isEnabled) {
       new BackgroundSelectorVideoView({
+        model: view.model
+      });
+    }
+
+    // Parallax
+    if (view.model.get('_backgroundSelector')._parallax && view.model.get('_backgroundSelector')._parallax._isEnabled) {
+      new BackgroundSelectorParallaxView({
         model: view.model
       });
     }

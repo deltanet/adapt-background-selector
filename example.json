@@ -27,5 +27,22 @@
     "_loopEnabled": false,
     "_disableOnMobile": true,
     "_src": ""
+  },
+  "_parallax": {
+    "_isEnabled": true,
+    "_items": [
+      {
+        "_src": "course/en/assets/scene3.png",
+        "_offset": 0.9
+      },
+      {
+        "_src": "course/en/assets/scene7.png",
+        "_offset": 0.5
+      },
+      {
+        "_src": "course/en/assets/scene4.png",
+        "_offset": 0.1
+      }
+    ]
   }
 }

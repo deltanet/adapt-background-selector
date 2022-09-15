@@ -50,4 +50,40 @@
     left: 0;
     .l-container-responsive(@max-width);
   }
+
+  .background-selector-parallax {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    .l-container-responsive(@max-width);
+  }
+
+  .parallax {
+    position: relative;
+
+    &__layer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+
+      // parallax
+      transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
+
+      @media (prefers-reduced-motion: reduce) {
+        transform: translateY(0);
+      }
+    }
+
+    &__image {
+      img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+      }
+    }
+  }
 }

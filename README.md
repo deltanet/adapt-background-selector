@@ -18,7 +18,7 @@ The attributes listed below are properly formatted as JSON in [*example.json*](h
 
 ### Attributes
 
-The Background selector attribute group contains values for **_isEnabled**, **_color**, **_image**, **_gradient**, and **_video**.
+The Background selector attribute group contains values for **_isEnabled**, **_color**, **_image**, **_gradient**, **_video**, and **_parallax**.
 
 >**_isEnabled** (boolean):  Turns on and off the **Background selector** extension. Can be set to disable **Background selector** when not required.  
 
@@ -56,7 +56,7 @@ The Background selector attribute group contains values for **_isEnabled**, **_c
 
 >>**_colors** (string): Defines the colors used for the gradient. Format should be a comma separated list of Hex Color Codes.  
 
->**_video** (object):  This `_video` attributes group stores the properties for an image used at mobile size. It contains values for **_isEnabled**, **_loopEnabled**, **_disableOnMobile**, and **_src**.  
+>**_video** (object):  This `_video` attributes group stores the properties for the video background. It contains values for **_isEnabled**, **_loopEnabled**, **_disableOnMobile**, and **_src**.  
 
 >>**_isEnabled** (boolean): If set to `true`, the specified video will be shown as the background.  
 
@@ -66,12 +66,22 @@ The Background selector attribute group contains values for **_isEnabled**, **_c
 
 >>**_src** (string): File name (including path) of the video. Path should be relative to the *src* folder.  
 
+>**_parallax** (object):  This `_parallax` attributes group stores the properties for the parallax background. It contains values for **_isEnabled**, and **_items**.  
+
+>>**_isEnabled** (boolean): If set to `true`, the specified video will be shown as the background.  
+
+>>**_items** (array): This `_items` attributes group stores the properties for the background layers in the parallax scene. It contains values for **_src**, and **_offset**.  
+
+>>>**_src** (string): File name (including path) of the image. Path should be relative to the *src* folder.  
+
+>>>**_offset** (number): Defines the value that creates the parallax movement on the image.
+
 ## Limitations
 
 No known limitations.
 
 ----------------------------
-**Version number:**  4.1.0    
+**Version number:**  4.2.0    
 **Framework versions supported:**  5.8+    
 **Author / maintainer:** DeltaNet with [contributors](https://github.com/deltanet/adapt-background-selector/graphs/contributors)     
 **Accessibility support:** Yes  

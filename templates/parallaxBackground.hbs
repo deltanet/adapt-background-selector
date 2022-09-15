@@ -1,0 +1,9 @@
+<div id="parallax-{{_id}}" class="parallax">
+  {{#each _backgroundSelector._parallax._items}}
+  <div class="parallax__layer" style="--offset:{{_offset}}">
+    <div class="parallax__image">
+      <img src="{{_src}}"/>
+    </div>
+  </div>
+  {{/each}}
+</div>
