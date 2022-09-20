@@ -8,14 +8,14 @@ export default class BackgroundSelectorVideoView extends Backbone.View {
   }
 
   initialize() {
-    this.render();
-
     this.listenTo(Adapt, {
       'remove': this.remove,
       'popup:opened': this.popupOpened,
       'popup:closed': this.popupClosed,
       'device:changed': this.deviceChanged
     });
+
+    this.render();
   }
 
   render() {
@@ -47,10 +47,10 @@ export default class BackgroundSelectorVideoView extends Backbone.View {
   }
 
   popupOpened() {
-    if ($('body').children('.audio-prompt').css('visibility') == 'visible') {
+    if ($('.notify__container').find('.audio-prompt').css('visibility') == 'visible') {
       this.playVideo(false);
       this.audioPromptOpened();
-    } else if ($('body').children('.notify').css('visibility') == 'visible') {
+    } else if ($('.notify__container').find('.notify').css('visibility') == 'visible') {
       this.playVideo(false);
       this.notifyOpened();
     }
