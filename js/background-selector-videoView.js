@@ -1,4 +1,5 @@
 import Adapt from 'core/js/adapt';
+import device from 'core/js/device';
 
 export default class BackgroundSelectorVideoView extends Backbone.View {
 
@@ -115,7 +116,7 @@ export default class BackgroundSelectorVideoView extends Backbone.View {
   }
 
   deviceChanged() {
-    if (Adapt.device.screenSize === 'small' && this.model.get('_backgroundSelector')._video._disableOnMobile) {
+    if (device.screenSize === 'small' && this.model.get('_backgroundSelector')._video._disableOnMobile) {
       this.$el.addClass('is-hidden');
     } else {
       this.$el.removeClass('is-hidden');

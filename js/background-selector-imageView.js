@@ -1,4 +1,5 @@
 import Adapt from 'core/js/adapt';
+import device from 'core/js/device';
 
 export default class BackgroundSelectorImageView extends Backbone.View {
 
@@ -47,21 +48,21 @@ export default class BackgroundSelectorImageView extends Backbone.View {
     this.altText = null;
 
     // Check device size
-    if (Adapt.device.screenSize === 'large') {
+    if (device.screenSize === 'large') {
       if (this.config._largeSrc) {
         this.image = 'url('+this.config._largeSrc+')';
       }
       if (this.config.largeAlt && !this.config.largeAlt == "") {
         this.altText = this.config.largeAlt;
       }
-    } else if (Adapt.device.screenSize === 'medium') {
+    } else if (device.screenSize === 'medium') {
       if (this.config._mediumSrc) {
         this.image = 'url('+this.config._mediumSrc+')';
       }
       if (this.config.mediumAlt && !this.config.mediumAlt == "") {
         this.altText = this.config.mediumAlt;
       }
-    } else if (Adapt.device.screenSize === 'small') {
+    } else if (device.screenSize === 'small') {
       if (this.config._smallSrc) {
         this.image = 'url('+this.config._smallSrc+')';
       }
