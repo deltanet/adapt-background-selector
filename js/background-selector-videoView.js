@@ -24,12 +24,6 @@ export default class BackgroundSelectorVideoView extends Backbone.View {
 
     $(this.el).html(template(data)).prependTo('.'+this.model.get("_id"));
 
-    this.isIE = $('html').is('.ie');
-
-    if (this.isIE) {
-      this.$el.addClass('is-ie');
-    }
-
     this.modelID = '.'+this.model.get('_id');
     this.video = this.$('video')[0];
     this.firstRun = true;
